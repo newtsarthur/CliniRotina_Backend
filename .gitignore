@@ -1,0 +1,78 @@
+# Ficheiros de ambiente e variáveis secretas (NUNCA enviar para o repositório)
+.env
+.env.local
+.env.*.local
+*.env
+.env.example
+# Ambientes Virtuais de Python
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Byte-compiled / ficheiros de cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testes e cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# IDEs e editores de código
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Builds e temporários de deployment (Vercel, etc.)
+.vercel/
