@@ -4,11 +4,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers.auth import router as auth_router
 from app.routers.medicamento import router as medicamento_router
+from app.routers.consultas import router as consultas_router
+from app.routers.vinculo import router as vinculo_router
 
 app = FastAPI(
     title="CliniRotina API",
     description="Backend de suporte à organização de rotinas de saúde e integração com rotinas de otimização",
-    version="0.3.0",
+    version="0.5.0",
 )
 
 # Origens locais (Vite/localhost em qualquer porta), deploys da Vercel (*.vercel.app)
@@ -26,6 +28,8 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(medicamento_router)
+app.include_router(consultas_router)
+app.include_router(vinculo_router)
 
 
 @app.get("/", tags=["Raiz"])

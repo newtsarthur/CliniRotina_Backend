@@ -38,3 +38,10 @@ def delete_medicamento(medicamento_id: str) -> bool:
     supabase = get_supabase()
     result = supabase.table("medicamento").delete().eq("id", medicamento_id).execute()
     return bool(result.data)
+
+def list_medicamentos_de(ids_idosos: list[str]) -> list:
+    if not ids_idosos:
+        return []
+    supabase = get_supabase()
+    result = supabase.table("medicamento").select("*").in_("id_idoso", ids_idosos).execute()
+    return result.data or []

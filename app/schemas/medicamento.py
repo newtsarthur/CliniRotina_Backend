@@ -1,8 +1,11 @@
+from uuid import UUID
+
 from pydantic import BaseModel, Field
 
 
 class MedicamentoCreate(BaseModel):
-    id_idoso: str = Field(..., min_length=1)
+    # Opcional para o IDOSO (assume o próprio id); obrigatório para o CUIDADOR.
+    id_idoso: UUID | None = None
     nome_remedio: str = Field(..., min_length=1, max_length=100)
     dosagem: str = Field(..., min_length=1, max_length=50)
     instrucoes_uso: str | None = Field(None)

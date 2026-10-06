@@ -27,6 +27,17 @@ def create_token(subject: str) -> str:
     return jwt.encode(payload, settings.jwt_secret, algorithm=settings.jwt_algorithm)
 
 
+def get_user_by_id(user_id: str) -> dict | None:
+    supabase = get_supabase()
+    result = (
+        supabase.table("usuario")
+        .select("id, nome, cpf, telefone, tipo_perfil")
+        .eq("id", user_id)
+        .execute()
+    )
+    return result.data[0] if result.data else None
+
+
 def register_user(data: dict) -> dict:
     supabase = get_supabase()
 
