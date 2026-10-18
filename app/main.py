@@ -6,6 +6,7 @@ from app.routers.auth import router as auth_router
 from app.routers.medicamento import router as medicamento_router
 from app.routers.consultas import router as consultas_router
 from app.routers.vinculo import router as vinculo_router
+from app.routers.optimization import router as optimization_router
 
 app = FastAPI(
     title="CliniRotina API",
@@ -30,6 +31,7 @@ app.include_router(auth_router)
 app.include_router(medicamento_router)
 app.include_router(consultas_router)
 app.include_router(vinculo_router)
+app.include_router(optimization_router)
 
 
 @app.get("/", tags=["Raiz"])
